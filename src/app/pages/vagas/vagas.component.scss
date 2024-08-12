@@ -1,0 +1,39 @@
+.btn-candidatar-se{
+    color: #ff7b00 !important;
+}
+
+.btn-secondary{
+    border: none !important;
+}
+
+.add-vaga{
+    width: 100%;
+}
+
+.buttons{
+    gap: 5px;
+}
+
+.btn-primary{
+    background-color: #ff7b00 !important;
+    border: none;
+    &:hover{
+        background-color: #ff8b1e !important;
+    }
+}
+
+section{
+    @media (max-width: 450px) {
+        padding: 0 !important;
+    }
+}
+// .alterar-vaga{
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     background-color: #b9b9b9;
+//     padding: 10px;
+//     width: 50%;
+//     border-radius: 10px;
+// }

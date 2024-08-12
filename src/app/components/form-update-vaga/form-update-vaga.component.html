@@ -1,0 +1,25 @@
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nomeHelp" placeholder="Digite o nome" [(ngModel)]="nome">
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+      <label for="exampleDescicao">Descrição</label>
+      <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Digite a descrição" [(ngModel)]="descricao">
+    </div>
+    <div class="form-group">
+        <label for="exampleDescicao">Salário</label>
+        <input type="number" class="form-control" name="salario" id="salario" placeholder="Digite o salário" [(ngModel)]="salario">
+      </div>
+      <div class="form-group">
+        <label for="exampleDescicao">Cidade</label>
+        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a cidade" [(ngModel)]="cidade">
+      </div>
+      <div class="form-group">
+        <label for="exampleDescicao">Estado</label>
+        <input type="text" class="form-control" id="uf" name="uf" placeholder="Digite o UF do Estado" [(ngModel)]="uf">
+      </div>
+    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateVaga()">Alterar Vaga</button>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+  </form>

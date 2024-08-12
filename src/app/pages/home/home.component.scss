@@ -1,0 +1,13 @@
+.container-fluid{
+    background-image: url("../../../assets/images/hero.jpg");
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+
+    .title{
+        width: 60%;
+        color: #ff7b00;
+        margin: auto;
+    }
+}
+

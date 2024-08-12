@@ -1,0 +1,62 @@
+<section class="p-5">
+    <nz-card nzTitle="Oportunidades Disponíveis">
+        <ng-container *ngFor="let vaga of vagas">
+            <nz-card nzType="inner" [nzTitle]="vaga.nome" [nzExtra]="extraTemplate">
+                <a class="font-semibold">Descrição: {{vaga.descricao}}</a>
+                <p class="mt-3 font-regular">Salário: {{vaga.sallary | currency:'BRL':'symbol':'1.2-2'}} </p>
+                <p class="font-regular">{{vaga.cidade}} - {{vaga.uf}}</p>
+                <div class="buttons d-flex flex-wrap gap-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    (click)="alterarVaga(vaga)">
+                    Alterar Vaga
+                </button>
+                <button type="button" class="btn btn-secondary" (click)="deletarVaga(vaga)">
+                    Deletar Vaga
+                </button>
+                </div>
+            </nz-card>
+        </ng-container>
+    </nz-card>
+    <ng-template #extraTemplate>
+        <a class="font-bold btn-candidatar-se">Candidatar-se</a>
+    </ng-template>
+    
+    <div class="add-vaga d-flex align-items-end justify-content-end">
+        <button type="button" class="btn btn-regular mr-4 mt-3" data-bs-toggle="modal" data-bs-target="#modalAddVaga">
+            Adicionar Vaga
+        </button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 font-bold" id="exampleModalLabel">Alterar Vaga</h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        Fechar
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <app-form-update-vaga [vaga]="vagaToUpdate" (emitVagas)="attVagas($event)"></app-form-update-vaga>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="modalAddVaga" tabindex="-1" aria-labelledby="modalAddVaga" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 font-bold" id="exampleModalLabel">Adicionar Vaga</h1>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        Fechar
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <app-form-add-vaga (vagasToEmit)="attVagas($event)"></app-form-add-vaga>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
